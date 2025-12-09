@@ -12,13 +12,13 @@ This project answers 20+ business and statistical questions including:
 •	Do current claim amounts exceed the historical benchmark?
 
 **🧹 Key Steps Performed**
-1. Data Cleaning & Preparation
+**1. Data Cleaning & Preparation:**
 •	Combined two datasets into a 360° customer-claim table
 •	Audited datatypes and corrected mismatches
 •	Converted claim amounts (removed $ and commas)
 •	Imputed missing values using mean (numeric) and mode (categorical)
 •	Removed duplicate customer entries (kept latest claim)
-2. Feature Engineering
+**2. Feature Engineering:**
 •	Created police-report alert flag for unreported injury claims
 •	Calculated customer age
 •	Categorized customers into:
@@ -27,19 +27,19 @@ o	Youth
 o	Adults
 o	Seniors
 •	Extracted claim month and created trend variables
-3. Exploratory Data Analysis
+**3. Exploratory Data Analysis:**
 •	Average claim by segment
 •	Driver-related issues by state and age group
 •	Fraud detection patterns
 •	Monthly claim trends
 •	Gender-wise and segment-wise claim distribution
-4. Visualization
+**4. Visualization:**
 Using Matplotlib and Seaborn:
 •	Pie charts
 •	Bar charts
 •	Facet charts
 •	Line charts (monthly trends)
-5. Statistical Hypothesis Testing
+**5. Statistical Hypothesis Testing:**
 Performed using SciPy:
 •	Two-sample t-test (male vs female claim amounts)
 •	Chi-square test (age group vs segment)
