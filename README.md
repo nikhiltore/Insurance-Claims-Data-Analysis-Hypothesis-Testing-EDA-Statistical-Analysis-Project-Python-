@@ -7,7 +7,7 @@ The goal is to understand customer behavior, claim characteristics, fraud patter
 To build a 360° analytical view of insurance customers and their claims, identify risk segments, detect fraud indicators, and validate patterns using statistical hypothesis tests.
 
 **🛠️ Steps Performed:**
-**1️⃣ Data Loading & 360° Merge**
+**1️⃣ Data Loading & Merge**
 •	Imported claims.csv and cust_demographics.csv
 •	Joined both datasets using customer_id
 •	Created a unified dataset for all analysis
