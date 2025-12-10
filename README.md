@@ -1,65 +1,70 @@
-**📌 Insurance Claims Analysis:**
-This project performs a complete Exploratory Data Analysis (EDA) and Hypothesis Testing on insurance claim datasets. It covers data cleaning, feature engineering, visual analytics, and statistical validation.
+**📘 Insurance Claims Case Study (Python):**
+This project delivers a complete solution to an Insurance Claims Case Study using Python, Pandas, NumPy, Matplotlib, Seaborn, and SciPy.
+It includes data cleaning, feature engineering, EDA, visualizations, and statistical hypothesis testing.
+The goal is to understand customer behavior, claim characteristics, fraud patterns, and statistical relationships across the insurance dataset.
 
-**🔍 Project Overview**
-Insurance companies process thousands of claims each month. This case study aims to analyze customer demographics, claim patterns, fraudulent behavior, and factors influencing the claim amount.
-This project answers 20+ business and statistical questions including:
-•	Which customer segments claim the most?
-•	Is there a relationship between age group and segment?
-•	Are claim amounts different for males vs. females?
-•	Which age group has the highest fraudulent claims?
-•	What is the month-wise trend of claims?
-•	Do current claim amounts exceed the historical benchmark?
+**🎯 Objective:**
+To build a 360° analytical view of insurance customers and their claims, identify risk segments, detect fraud indicators, and validate patterns using statistical hypothesis tests.
 
-**🧹 Key Steps Performed**
-**1. Data Cleaning & Preparation:**
-•	Combined two datasets into a 360° customer-claim table
-•	Audited datatypes and corrected mismatches
-•	Converted claim amounts (removed $ and commas)
-•	Imputed missing values using mean (numeric) and mode (categorical)
-•	Removed duplicate customer entries (kept latest claim)
-**2. Feature Engineering:**
-•	Created police-report alert flag for unreported injury claims
-•	Calculated customer age
-•	Categorized customers into:
-o	Children
-o	Youth
-o	Adults
-o	Seniors
-•	Extracted claim month and created trend variables
-**3. Exploratory Data Analysis:**
-•	Average claim by segment
-•	Driver-related issues by state and age group
-•	Fraud detection patterns
-•	Monthly claim trends
-•	Gender-wise and segment-wise claim distribution
-**4. Visualization:**
-Using Matplotlib and Seaborn:
-•	Pie charts
-•	Bar charts
-•	Facet charts
-•	Line charts (monthly trends)
-**5. Statistical Hypothesis Testing:**
-Performed using SciPy:
-•	Two-sample t-test (male vs female claim amounts)
-•	Chi-square test (age group vs segment)
-•	One-sample t-test (current year claims vs 10,000 benchmark)
-•	ANOVA (age groups vs claim amounts)
-•	Correlation test (policies vs claim amount)
+**🛠️ Steps Performed:**
+**1️⃣ Data Loading & 360° Merge**
+•	Imported claims.csv and cust_demographics.csv
+•	Joined both datasets using customer_id
+•	Created a unified dataset for all analysis
 
-**📈 Key Insights**
-•	Adults form the largest claimant group.
-•	Driver-related issues vary by state and gender.
-•	Fraudulent claims are highest among adults.
-•	Monthly trend shows non-linear fluctuations in total claim amount.
-•	Claim amounts differ statistically between age groups.
+**2️⃣ Data Cleaning & Standardization**
+•	Audited data types and inconsistent values
+•	Converted monetary fields (claim_amount) by removing $ and converting to float
+•	Parsed date fields (claim_date, DateOfBirth) into datetime formats
 
-**🛠️ Tech Stack**
-•	Python
-•	NumPy
-•	Pandas
-•	Matplotlib
-•	Seaborn
-•	Scikit-Learn
+**3️⃣ Feature Engineering**
+•	Injury Police Alert flag for injury claims without police reports
+•	Most recent claim per customer retained using date-based deduplication
+•	Missing value imputation:
+o	Numerical → mean
+o	Categorical → mode
+•	Age calculation as of 1-Oct-2018
+•	Age buckets: Children, Youth, Adult, Senior
+
+**4️⃣ Exploratory Data Analysis**
+Insights generated:
+•	Average claim amount by customer segment
+•	Total claim amount by incident cause for eligible claims
+•	Number of claims and customers in driver-related incidents (TX, DE, AK adults)
+•	Gender-wise and segment-wise claim amount distribution (pie charts)
+•	Driver-related claim comparison between genders
+•	Fraudulent claims by age group
+•	Monthly trend of total claim amounts
+•	Facetted bar charts showing claim amount patterns by gender × age group × fraud status
+All visualizations use Matplotlib/Seaborn with clear labels and titles.
+
+**5️⃣ Hypothesis Testing (Q16–Q20)**
+Q16 — Claim Amount Difference Between Males & Females
+Test: Independent two-sample t-test
+Goal: Check whether average claim amounts differ between men and women
+Q17 — Relationship Between Age Group & Customer Segment
+Test: Chi-square test of independence
+Goal: Determine whether age groups are associated with specific customer segments
+Q18 — Current Year Claim Amount vs Benchmark $10,000
+Test: One-sample t-test (one-sided)
+Goal: Verify if the current year’s mean claim amount is significantly higher than $10,000
+Q19 — Claim Amount Variation Across Age Groups
+Test: One-way ANOVA
+Goal: Compare mean claim amounts among Children, Youth, Adults, and Seniors
+Q20 — Relationship Between Total Policy Claims & Claim Amount
+Test: Pearson correlation
+Goal: Identify if customers with more policy claims also file higher-value claims
+
+**📈 Key Outcomes:**
+•	Built a refined dataset with customer demographics + claims
+•	Identified high-risk groups and fraudulent patterns
+•	Found strong age and segment-level behaviour differences
+
+**🧮 Tech Stack:**
+•	Python 3
+•	Pandas, NumPy
+•	Matplotlib, Seaborn
 •	SciPy
-
+•	Jupyter Notebook
+•	Detected significant trends in claims over time
+•	Confirmed (or rejected) assumptions using statistical tests
